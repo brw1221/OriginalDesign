@@ -1,12 +1,28 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OriginalDesign extends PApplet {
+
 PImage pikachu;
 	
-void setup()
+public void setup()
 {
 size(500, 500);
 pikachu = loadImage("http://img2.wikia.nocookie.net/__cb20140214155630/adventuretimewithfinnandjake/images/thumb/a/a7/Pikachu-5948-1920x1080.jpg/640px-Pikachu-5948-1920x1080.jpg");
 background(0,0,0);
 }
-void draw()
+public void draw()
 {	
 	if(mousePressed == true)
 	{	
@@ -22,7 +38,7 @@ void draw()
 		insidePokeball();
 	}
 }
-void outsidePokeball()
+public void outsidePokeball()
 {	stroke(0,0,0);
 	strokeWeight(3);
 	fill(255,0,0);
@@ -30,7 +46,7 @@ void outsidePokeball()
 	fill(255,255,255);
 	arc(250,250,200,200, 0,PI);
 }
-void insidePokeball()
+public void insidePokeball()
 {
 	fill(255,255,255);
 	stroke(0,0,0);
@@ -40,4 +56,13 @@ void insidePokeball()
 	fill(0,0,0);
 	line(150, 250, 215, 250);
 	line(285, 250, 350, 250);
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OriginalDesign" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
