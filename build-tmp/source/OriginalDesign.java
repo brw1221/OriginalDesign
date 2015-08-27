@@ -31,9 +31,7 @@ public void draw()
 	if(mousePressed == true)
 	{	
 		
-	
-	
-		if(numPic==1)
+		if(numPic==3)
 			{
 			background(255);
 			imageMode(CENTER);
